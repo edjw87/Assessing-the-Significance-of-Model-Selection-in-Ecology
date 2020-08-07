@@ -42,14 +42,14 @@ For the ibex example, the tests are then run with the command:
 
 and the outputs form a list, the elements of which can be accessed by typing 
 
->print('Single model p-values')   ### print the results
->print(output$single_model_p_value) ### single model p-values are given in the first element of the list.
+>print('Single model p-values')
+>print(output$single_model_p_value) 
 >print('Model selection p-value')
->print(output$model_selection_p_value) ### model selection p-value is given in the second element of the list
+>print(output$model_selection_p_value)
 
 RUNNING THE CODE WITH A USER DEFINED MODEL
 
-The permutation tests can be run for other statistical models by providing alternative model functions.  The only requirement is that, as with the "Ibex" function, the first argument must be a vector of outcomes.  The tests can then be performed by running 
+The Ibex.R function provided is suitable for other population modelling examples using the Stochastic Ricker and Gompertz models as well as other linear generalised linear models (GLMs).  However, it is also straightforward to write a function for other models by replacing Ibex.R with a user-defined function. The only requirement of the function is the first argument must be a vector of outcomes.  The tests can then be performed by running 
 
 >output=model_sel_permutations(repeats,"function_name",pars) 
 
