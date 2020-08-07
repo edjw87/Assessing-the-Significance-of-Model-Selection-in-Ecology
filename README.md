@@ -34,7 +34,7 @@ This is the function that applies the two permutation tests.  It takes as argume
 (ii) FUN - The name of the model function (in this case "Ibex")
 (iii) pars - a list consisting of the inputs to the model function in the order they appear.  Each element of the list should be given the name of the argument.  E.g., for the ibex example, we define 
 
->pars=list("outcome"=outcomes,"vars"=vars,"combinations"=var_combinations) 
+>pars=list("outcome"=Y,"vars"=vars,"combinations"=var_combinations) 
 
 For the ibex example, the tests are then run with the command:
 
