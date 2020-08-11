@@ -7,7 +7,7 @@ RUNNING THE CODE FOR THE IBEX EXAMPLE
 The following code can be used to apply the single model and model selection permutation tests in R. The code consists of the following two functions and a script demonstrating their usage.
 
 1) model_sel_permutations.R (function to perform the single model and model selection permutation tests)
-2) Ibex.R (function to use within model_sel_permutations.R to perform tests on the ibex example)
+2) Ibex.R (function to use within model_sel_permutations.R to perform tests for the ibex example)
 3) main.R (script demonstrating how to use the two functions to perform the tests)
 
 The model_sel_permutations.R function performs the tests with a given, user defined, function.  This is demonstrated using the Ibex.R function but it is straighforward to use an alternative function (instructions for doing this are also described).
@@ -23,18 +23,20 @@ The function Ibex.R takes as arguments:
 (i) outcome - a vector of outcomes of length n 
 (ii) vars - an nxk matrix of predictor variables 
 (iii) combinations - an mxk matrix of 1s and 0s which determines the predictor variables that are to be included in each model. Each row corresponds to a different combination of variables (model) and the number in each column determines whether that variable (as defined in the columns of "vars") is included or not (1 or 0).
+(iv) threshold_value - a vector of length m defining a threshold value for each model on which the regression is performed.  Set this to "NA" if threshold model is not used.
+(v) threshold_variable - Variable corresponding to column in "combinations" on which the threshold is to be applied.
 
-The function fits a multiple linear regression and returns a vector of AIC values with each one corresponding to a different combination of variables (as determined by the "combinations" argument to the function).
+The function fits each model and returns a vector of AIC values with each one corresponding to a different combination of variables and thresholds (as determined by the "combinations" argument to the function).
 
 2) model_sel_permutations.R
 
-This is the function that applies the two permutation tests.  It takes as arguments :
+This is the function that performs the two permutation tests.  It takes as arguments :
 
 (i) repeats - a single number defining the number of permutations of the outcomes used to calculate the estimated p-values of the two tests.
 (ii) FUN - The name of the model function (in this case "Ibex")
 (iii) pars - a list consisting of the inputs to the model function in the order they appear.  Each element of the list should be given the name of the argument.  E.g., for the ibex example, we define 
 
->pars=list("outcome"=Y,"vars"=vars,"combinations"=var_combinations) 
+>pars=list("outcome"=Y,"vars"=vars,"combinations"=var_combinations,"threshold_value"=threshold_value,"threshold_variable"=threshold_variable) 
 
 For the ibex example, the tests are then run with the command:
 
