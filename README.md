@@ -1,4 +1,4 @@
-The code in this repository can be used to apply the two permutation tests described in "Assessing the Significance of Model Selection in Ecology" by Edward Wheatcroft.  A preprint of the paper is available at https://arxiv.org/abs/2004.07583 and it is also under consideration for publication in the European Journal of Ecology.
+The code in this repository can be used to apply the two permutation tests described in "Assessing the Significance of Model Selection in Ecology" by Edward Wheatcroft.  A preprint of the paper is available at https://arxiv.org/abs/2004.07583 and it has also been accepted for publication in the European Journal of Ecology.
 
 Within the paper, two real world demonstrations of the tests are given for population modelling of (i) reindeer populations in Hardangervidda National Park and (ii) Ibex populations in Gran Paradiso National Park.  The code is demonstrated using the ibex example but it is straighforward to apply to any user-defined model.
 
