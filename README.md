@@ -44,10 +44,10 @@ For the ibex example, the tests are then run with the command:
 
 and the outputs form a list, the elements of which can be accessed by typing 
 
->print('Single model p-values:')
->print(output$single_model_p_value) 
->print('Model selection p-value:')
->print(output$model_selection_p_value)
+>print('Single model p-values:') <br/>
+>print(output$single_model_p_value) <br/>
+>print('Model selection p-value:') <br/>
+>print(output$model_selection_p_value) <br/>
 
 RUNNING THE CODE WITH A USER DEFINED MODEL
 
